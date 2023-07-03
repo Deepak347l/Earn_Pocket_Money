@@ -75,13 +75,13 @@ class MainActivity : AppCompatActivity() {
         val t = Profile()
         val f4th = Settings()
         setCurrentFragment(f)
-        binding.tabLayout.setOnNavigationItemSelectedListener{
-            when(it.itemId){
-                R.id.page_1-> setCurrentFragment(f)
-                R.id.page_2-> setCurrentFragment(s)
-                R.id.page_3-> setCurrentFragment(t)
-                R.id.page_4-> setCurrentFragment(f4th)
-                R.id.page_5-> setCurrentFragment(f4th)
+        binding.tabLayout.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.page_1 -> setCurrentFragment(HomeFragment())
+                R.id.page_2 -> setCurrentFragment(Categories())
+                R.id.page_3 -> setCurrentFragment(Profile()) // Redirect to Profile fragment
+                R.id.page_4 -> setCurrentFragment(Settings())
+                R.id.page_5 -> setCurrentFragment(Settings())
             }
             true
         }
@@ -104,13 +104,13 @@ class MainActivity : AppCompatActivity() {
             })
     }
 
-    private fun setCurrentFragment(f: Fragment) {
+    private fun setCurrentFragment(fragment: Fragment) {
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
         transaction.setCustomAnimations(
             android.R.anim.slide_in_left,
             android.R.anim.slide_out_right
         )
-        transaction.replace(binding.frameLayout.id, f)
+        transaction.replace(binding.frameLayout.id, fragment)
         transaction.commit()
     }
     private fun inappupdate() {
