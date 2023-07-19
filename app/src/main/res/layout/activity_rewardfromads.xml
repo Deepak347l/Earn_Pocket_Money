@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".Fragment.categoriesAssest.Rewardfromads">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="295dp"
+        android:layout_marginTop="2dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_url="https://assets3.lottiefiles.com/packages/lf20_xldzoar8.json" />
+    <LinearLayout
+        android:id="@+id/linear9Wr"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/BalanceWbr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹"
+            android:fontFamily="@font/poppins_semibold"
+            android:includeFontPadding="false"
+            android:textSize="30sp"
+            android:textColor="@color/md_theme_light_primary" />
+        <TextView
+            android:id="@+id/BalanceWr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:includeFontPadding="false"
+            android:textSize="30sp"
+            android:textColor="@color/md_theme_light_primary" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/button2WWRRRr"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/custom_edittext"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textview3UUUUMMMr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="ADD TO WALLET"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_semibold"
+            android:includeFontPadding="false"
+            android:textSize="20sp"
+            android:textColor="@color/md_theme_dark_background" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/nativeAdContainer1zzzz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:padding="8dp"
+        android:orientation="horizontal" />
+</LinearLayout>

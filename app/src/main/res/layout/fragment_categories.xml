@@ -1,14 +1,492 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
     tools:context=".Fragment.Categories">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        >
 
-</FrameLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/coinFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                >
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/coinH1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Earn Coin &amp; Get Cash "
+                    android:padding="5dp"
+                    android:textColor="#131419"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="16sp"
+                    android:layout_alignParentStart="true"
+                    android:layout_toLeftOf="@id/coinH1F"
+                    />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/coinH11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Coins will be automaticlly converted into cash by midnight &amp; will be added to your income"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:includeFontPadding="false"
+                    android:textSize="14sp"
+                    android:padding="5dp"
+                    android:layout_below="@+id/coinH1"
+                    android:layout_alignParentStart="true"
+                    android:layout_toLeftOf="@id/coinH1F"
+                    />
+                <LinearLayout
+                    android:id="@+id/coinH1F"
+                    android:layout_width="135dp"
+                    android:layout_height="135dp"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/coinH1C"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:src="@drawable/holdingbagswithmoney"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical"
+                    app:cardCornerRadius="4dp"
+                    android:layout_below="@+id/coinH1F"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp"
+                        >
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/iconsoneeurocent"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:includeFontPadding="false"
+                            android:padding="5dp"
+                            android:id="@+id/coinDes"
+                            android:layout_centerHorizontal="true"
+                            android:text="Coins earned total"
+                            android:textColor="@android:color/black"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:includeFontPadding="false"
+                            android:layout_below="@+id/coinDes"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="12sp"
+                            android:text="(100 coin = ₹1)" />
+                        <TextView
+                            android:id="@+id/coinC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:text="₹100000"
+                            android:textSize="15sp"
+                            android:textColor="@android:color/black"
+                            />
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/quizad1x"
+            android:layout_below="@+id/coinFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                >
+                <ImageView
+                    android:id="@+id/quizAd11imgx"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/quizzzzzzz"
+                    />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:id="@+id/linear5"
+            android:layout_below="@+id/quizad1x"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/bn1"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/custom_edittext"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/linear20"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/img1"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:background="@drawable/custom_edittext"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/imageview2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_baseline_card_giftcard_24"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear21"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/textview7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Daily Bonus"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="22sp"
+                    android:textColor="#000000" />
+                <TextView
+                    android:id="@+id/textview8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="1dp"
+                    android:text="Claim Daily Bonus Earn Upto ₹2.00 "
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textColor="#000000" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear22"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/imageview3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_baseline_navigate_next_24"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/bn2"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/custom_edittext"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/linear32"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/img2"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:background="@drawable/custom_edittext"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/imageview4"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_baseline_videocam_24"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear33"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/textview15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Watch Video Ad"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="22sp"
+                    android:textColor="#000000" />
+                <TextView
+                    android:id="@+id/textview16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="1dp"
+                    android:text="Watch Video Ad and Earn money"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textColor="#000000" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear34"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/imageview5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_baseline_navigate_next_24"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/nativeAdContainerAd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:padding="8dp"
+                android:orientation="horizontal" />
+        <LinearLayout
+            android:id="@+id/bn3"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/custom_edittext"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/linear37"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/img3"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:background="@drawable/custom_edittext"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/imageview6"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/ic_baseline_sports_soccer_24"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear38"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/textview17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Spin And Earn"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="22sp"
+                    android:textColor="#000000" />
+                <TextView
+                    android:id="@+id/textview18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="1dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Spin And Win Upto ₹20.00"
+                    android:textSize="12sp"
+                    android:textColor="#000000" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear39"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/imageview7"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_navigate_next_24"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/bn4"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/custom_edittext"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/linear42"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/img4"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:background="@drawable/custom_edittext"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/imageview8"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/ic_baseline_credit_card_24"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear43"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/textview19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Scratch Card "
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="22sp"
+                    android:textColor="#000000" />
+                <TextView
+                    android:id="@+id/textview20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="1dp"
+                    android:text="Scratch card And Win Upto ₹20.00"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textSize="12sp"
+                    android:textColor="#000000" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear44"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/imageview9"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_navigate_next_24"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+        </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/quizad1xx"
+            android:layout_below="@+id/linear5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                >
+                <ImageView
+                    android:id="@+id/quizAd11imgxx"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/jka"
+                    />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

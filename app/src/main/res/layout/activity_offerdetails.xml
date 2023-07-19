@@ -229,24 +229,11 @@
                         />
                 </RelativeLayout>
             </com.google.android.material.card.MaterialCardView>
-            <RelativeLayout
-                android:id="@+id/adView1f"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_margin="5dp"
-                >
-                <com.applovin.mediation.ads.MaxAdView
-                    android:id="@+id/adView1"
-                    xmlns:maxads="http://schemas.applovin.com/android/1.0"
-                    maxads:adUnitId="7ea17df93b155504"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_centerInParent="true"/>
 
-            </RelativeLayout>
+
         </RelativeLayout>
-
     </androidx.core.widget.NestedScrollView>
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

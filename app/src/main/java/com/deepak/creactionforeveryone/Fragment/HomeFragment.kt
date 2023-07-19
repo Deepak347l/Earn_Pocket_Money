@@ -58,7 +58,8 @@ class HomeFragment : Fragment(), Adapter.DownloadClickInterface {
         binding.recycler.layoutManager = LinearLayoutManager(context)
         binding.recycler.adapter = offerRVAdapter
         AndroidNetworking.initialize(context)
-        val url = "https://cpalead.com/dashboard/reports/campaign_json.php?id=2379391&country=IN&show=50"
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
+        val url = "https://cpalead.com/dashboard/reports/campaign_json.php?id=2379391&country=IN&show=30&subid="+uid.toString()
         AndroidNetworking.get(url)
             .setPriority(Priority.HIGH)
             .build()
@@ -117,12 +118,12 @@ class HomeFragment : Fragment(), Adapter.DownloadClickInterface {
             })
         //Now retrive our hedrer data
         FirebaseDatabase.getInstance().getReference("user")
-            .child(FirebaseAuth.getInstance().currentUser?.uid.toString()).addListenerForSingleValueEvent(object :
+            .child(FirebaseAuth.getInstance().currentUser?.uid.toString()).addValueEventListener(object :
                 ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     try {
-                        val income = snapshot.child("income").value.toString()
-                        binding.incomebalanceamsa.text = "₹" + income
+                        val income = snapshot.child("income").value.toString().toFloat()
+                        binding.incomebalanceamsa.setText(String.format("₹ %.2f",income))
                     }catch(e:Exception){
                         Log.e("finderror", e.message.toString())
                     }
@@ -242,19 +243,13 @@ class HomeFragment : Fragment(), Adapter.DownloadClickInterface {
             val customBuilder = builder.build()
             customBuilder.launchUrl(it.context, Uri.parse(QUERKA_URI))
         }
-        val view = layoutInflater.inflate(R.layout.activity_main, null)
-        // on below line we are creating a variable for our button
-        // which we are using to dismiss our dialog.
-        val tabLayout = view.findViewById<BottomNavigationView>(R.id.tabLayout)
         binding.bn5.setOnClickListener {
             val s = Categories()
            setCurrentFragment(s)
-            tabLayout.selectedItemId = R.id.page_2
         }
         binding.bn6.setOnClickListener {
             val t = Profile()
             setCurrentFragmentz(t)
-            tabLayout.selectedItemId = R.id.page_3
         }
         createnativeAd()
         binding.adView.loadAd()
@@ -323,9 +318,10 @@ class HomeFragment : Fragment(), Adapter.DownloadClickInterface {
        val intent = Intent(context,Offerdetails::class.java)
         intent.putExtra("app_name", notesRVModal.title)
         intent.putExtra("app_conversion", notesRVModal.conversion)
+        intent.putExtra("campid", notesRVModal.campid.toString())
         intent.putExtra("app_des", notesRVModal.description)
         val rewardamount =  (notesRVModal.amount.toFloat() * 80) / 2
-        intent.putExtra("app_amount", "Get ₹" + rewardamount.toInt().toString())
+        intent.putExtra("app_amount",  rewardamount.toInt().toString())
         intent.putExtra("app_img", notesRVModal.creatives.get(0).url)
         intent.putExtra("app_link", notesRVModal.link)
         startActivity(intent)

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page_1A"
+        android:enabled="true"
+        android:icon="@drawable/withdrawl"
+        android:title="Withdrawl"/>
+    <item
+        android:id="@+id/page_2A"
+        android:enabled="true"
+        android:icon="@drawable/stackofmoney"
+        android:title="Claim Earning"/>
+    <item
+        android:id="@+id/page_3A"
+        android:enabled="true"
+        android:icon="@drawable/points"
+        android:title="Redeem Refer Code"/>
+    <item
+        android:id="@+id/page_4A"
+        android:enabled="true"
+        android:icon="@drawable/giftpoints"
+        android:title="Redeem Gift Code"/>
+    <item
+        android:id="@+id/page_5A"
+        android:enabled="true"
+        android:icon="@drawable/historya"
+        android:title="History"/>
+    <item
+        android:id="@+id/page_6A"
+        android:enabled="true"
+        android:icon="@drawable/privacypolicy"
+        android:title="Privacy Policy"/>
+    <item
+        android:id="@+id/page_7A"
+        android:enabled="true"
+        android:icon="@drawable/logout"
+        android:title="Logout"/>
+
+    <item android:title="Social Medias">
+        <menu>
+            <item
+                android:id="@+id/page_8A"
+                android:enabled="true"
+                android:title="Telegram"
+                android:icon="@drawable/telegram"
+                />
+            <item
+                android:id="@+id/page_9A"
+                android:enabled="true"
+                android:title="Youtube"
+                android:icon="@drawable/youtube"
+                />
+        </menu>
+    </item>
+
+</menu>

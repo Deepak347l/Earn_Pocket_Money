@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.categoriesAssest.Spin">
+
+    <ImageView
+        android:id="@+id/ivWheel"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="56dp"
+        android:rotation="17"
+        android:src="@drawable/spin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/btnSpin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivWheel"
+        app:layout_constraintVertical_bias="0.417"
+        android:background="@drawable/custom_edittext"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal">
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:includeFontPadding="false"
+        android:text="SPIN &amp; TRY YOUR LUCK"
+        android:textSize="20sp"
+         android:textAlignment="center"
+        android:textColor="@color/md_theme_dark_background"
+       />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/desc1zzz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/poppins_medium"
+        android:includeFontPadding="false"
+        android:padding="16dp"
+        android:text="* For 1 spin we charge ₹4 from your earning "
+        android:textColor="@color/md_theme_dark_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSpin" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

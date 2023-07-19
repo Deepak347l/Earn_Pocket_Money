@@ -7,181 +7,107 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     >
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         >
-
-
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/materialTextView"
-            android:layout_width="match_parent"
+            android:id="@+id/wellcomemessage1xa"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
-            android:padding="5dp"
-            android:text="@string/app_name"
-            android:textAlignment="center"
+            android:includeFontPadding="false"
+            android:textColor="@color/md_theme_light_scrim"
             android:textSize="22sp"
-            android:layout_margin="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/materialCardView5"
-            android:layout_width="match_parent"
+            android:text="Wellcome to, "
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/wellcomemessage"
+            android:layout_below="@+id/wellcomemessage1xa"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:background="@drawable/custom_edittext"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/materialTextView">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:orientation="vertical"
-                android:padding="24dp">
-
-
-                <TextView
-                    android:id="@+id/loginText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Login"
-                    android:textAlignment="center"
-                    android:textColor="@color/md_theme_dark_onTertiary"
-                    android:textSize="36sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/username"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="40dp"
-                    android:background="@drawable/custom_edittext"
-                    android:drawableLeft="@drawable/ic_baseline_email_24"
-                    android:drawablePadding="8dp"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:padding="8dp"
-                    android:textColor="@color/md_theme_light_scrim"
-                    android:textColorHighlight="@color/md_theme_light_tertiaryContainer" />
-
-                <EditText
-                    android:id="@+id/password"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/custom_edittext"
-                    android:drawableLeft="@drawable/ic_baseline_lock_24"
-                    android:drawablePadding="8dp"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:padding="8dp"
-                    android:textColor="@color/md_theme_light_scrim"
-                    android:textColorHighlight="@color/md_theme_light_tertiaryContainer" />
-
-                <Button
-                    android:id="@+id/loginButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="30dp"
-                    android:backgroundTint="@color/md_theme_dark_primary"
-                    android:text="Login"
-                    android:textColor="@color/md_theme_light_scrim"
-                    android:textSize="18sp"
-                    app:cornerRadius="20dp" />
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/materialCardView3"
-            android:layout_width="match_parent"
+            android:fontFamily="@font/poppins_semibold"
+            android:includeFontPadding="false"
+            android:textColor="@color/md_theme_light_scrim"
+            android:textSize="20sp"
+            android:text="Earn Pocket Money"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_marginRight="10dp"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/wellcomemessage1"
+            android:layout_below="@+id/wellcomemessage"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:orientation="vertical"
-            app:cardCornerRadius="4dp"
-            app:cardElevation="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/materialCardView5">
+            android:fontFamily="@font/poppins_semibold"
+            android:includeFontPadding="false"
+            android:textColor="@color/seed"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Login To Continue"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            />
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView1a"
+            android:layout_width="match_parent"
+            android:layout_height="295dp"
+            android:layout_below="@+id/wellcomemessage1"
+            android:layout_margin="25dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/animation" />
 
-            <LinearLayout
-                android:id="@+id/scv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/linear4"
-                    android:layout_width="55dp"
-                    android:layout_height="55dp"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageview1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/google" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linear3W"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical">
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:paddingStart="16dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:text="SIGN IN WITH GOOGLE"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_below="@+id/animationView1a"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:includeFontPadding="false"
+            android:backgroundTint="@color/md_theme_dark_primary"
+            android:text="Login with Google"
+            android:textColor="@color/md_theme_light_scrim"
+            android:textSize="18sp"
+            app:cornerRadius="20dp" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/materialTextViewx"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="15dp"
+            android:layout_below="@+id/loginButton"
+            android:includeFontPadding="false"
             android:fontFamily="@font/poppins_semibold"
-            android:paddingStart="5dp"
+            android:padding="5dp"
             android:text="By Clicking on the above button you agree to our Privacy Policy,Terms &amp; Conditions."
-            android:textSize="15sp"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/materialCardView3" />
+             />
 
     <ProgressBar
         android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="#111111" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

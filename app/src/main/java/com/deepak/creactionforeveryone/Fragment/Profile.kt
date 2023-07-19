@@ -1,60 +1,95 @@
 package com.deepak.creactionforeveryone.Fragment
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.deepak.creactionforeveryone.R
+import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.fragment.app.Fragment
+import com.deepak.creactionforeveryone.databinding.FragmentProfileBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Profile.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Profile : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+    private var _binding:FragmentProfileBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Profile.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Profile().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
+        FirebaseDatabase.getInstance().getReference("user")
+            .child(FirebaseAuth.getInstance().currentUser?.uid.toString()).addListenerForSingleValueEvent(object :
+                ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    try {
+                val refercodeget = snapshot.child("referid").value.toString()
+                val totalrefercount = snapshot.child("total_reffer").value.toString()
+                        binding.Refer.text = refercodeget
+                if(totalrefercount == null){
+                    binding.totalRefer.text = "0"
+                    binding.totalEarn.text = "₹0.0"
+                }else{
+                    binding.totalRefer.text = totalrefercount
+                    val total_earn_amount = totalrefercount.toFloat() * (15.00).toFloat()
+                    binding.totalEarn.text = "₹" + total_earn_amount.toString()
                 }
-            }
+            }catch(e:Exception){
+                        Log.e("finderror", e.message.toString())
+                    }
+                    //custom ad set up
+                }
+                override fun onCancelled(error: DatabaseError) {
+                    Log.e("finderror", error.message.toString())
+                }
+            })
+
+        //refer button click listner
+        binding.button2.setOnClickListener {
+            FirebaseDatabase.getInstance().getReference("manul").child("link").addListenerForSingleValueEvent(object :
+                ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    try {
+                val link = snapshot.child("data").value.toString()
+                val sendIntent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(Intent.EXTRA_TEXT, link)
+                    type = "text/plain"
+                }
+                val shareIntent = Intent.createChooser(sendIntent, null)
+                startActivity(shareIntent)
+            }catch(e:Exception){
+                        Log.e("finderror", e.message.toString())
+                    }
+                    //custom ad set up
+                }
+                override fun onCancelled(error: DatabaseError) {
+                    Log.e("finderror", error.message.toString())
+                }
+            })
+        }
+        //copy refer code
+        binding.imageview2.setOnClickListener {
+            val c: ClipboardManager = context?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clipData = ClipData.newPlainText("TextView",binding.Refer.text.toString())
+            c.setPrimaryClip(clipData)
+            Toast.makeText(context,"Copied",Toast.LENGTH_SHORT).show()
+        }
+        return binding.root
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

@@ -41,6 +41,10 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
         // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -49,7 +53,7 @@ class Login : AppCompatActivity() {
         googleSignInClient = GoogleSignIn.getClient(this, gso)
         auth = Firebase.auth
 
-        scv.setOnClickListener {
+        loginButton.setOnClickListener {
             signIn()
         }
 
@@ -93,7 +97,7 @@ class Login : AppCompatActivity() {
 
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
-        scv.visibility = View.GONE
+        loginButton.visibility = View.GONE
         progressBar.visibility = View.VISIBLE
 
              auth.signInWithCredential(credential).addOnCompleteListener(this) { task ->
@@ -146,7 +150,7 @@ class Login : AppCompatActivity() {
             finish()
             Toast.makeText(this@Login, "registered", Toast.LENGTH_SHORT).show()
         } else {
-            scv.visibility = View.VISIBLE
+            loginButton.visibility = View.VISIBLE
             progressBar.visibility = View.GONE
         }
     }
