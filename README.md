@@ -1,2 +1,2 @@
-# Earn_Pocket_Money
+# Task Pe
 Task earning app
